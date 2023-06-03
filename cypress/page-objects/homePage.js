@@ -10,6 +10,8 @@ const formTab = '#form-header'
 const keyPressPage = '#keypresses-header' 
 const dragAndDropPage = '#draganddrop-header'
 const addRemoveElementHeader = '#addremoveelements-header'
+const statusCodePage = '#statuscodes-header'
+const iFrameHeader = '#iframe-header'
 
 class HomePage{
     clickInputTab() {
@@ -55,6 +57,14 @@ class HomePage{
 
     clickAddRemoveElementHeader() {
         cy.get(addRemoveElementHeader).click()
+    }
+
+    clickStatusCodePage() {
+        cy.get(statusCodePage).click()
+    }
+
+    clickIFrameElement() {
+        cy.get(iFrameHeader).click()
     }
 
 }

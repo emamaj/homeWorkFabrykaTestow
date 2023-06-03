@@ -10,6 +10,8 @@ import { func } from 'joi'
 import KeyPressPage from '../page-objects/keyPressPage'
 import DragAndDropPage from '../page-objects/dragAndDropPage'
 import AddAndRemoveElements from '../page-objects/addAndRemoveElementsPage'
+import StatusCodePage from '../page-objects/statusCodePage'
+import IFramePage from '../page-objects/iFramePage'
 
 describe('inputs test', () => {
 
@@ -112,8 +114,30 @@ describe('inputs test', () => {
         homePage.clickAddRemoveElementHeader()
 
         const addRemoveElement = new AddAndRemoveElements()
-        addRemoveElement.clickAddElementButton()
+        addRemoveElement.clickAddElementButton(),
         addRemoveElement.clickRemoveElementButton()
+    })
+
+    it('test status code page', function() {
+
+        const homePage = new HomePage()
+        homePage.clickStatusCodePage()
+
+        const statusPage = new StatusCodePage
+        statusPage.checkStatusCode200(),
+        statusPage.checkStatusCode305(),
+        statusPage.checkStatusCode404(),
+        statusPage.checkStatusCode500
+    })
+
+    it('test iFrame page', function() {
+
+        const homePage = new HomePage()
+        homePage.clickIFrameElement()
+
+        const iFramePage = new IFramePage()
+        iFramePage.pressButtonOne()
+        iFramePage.pressButtonTwo()
     })
 
 })
