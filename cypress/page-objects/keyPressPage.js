@@ -1,12 +1,12 @@
 
-const inputTarget = 'input[id="target"]'
-const keyResult = 'p[id="keyPressResult"]'
+const inputTarget = '#target'
+const keyResult = '#keyPressResult'
 
 class KeyPressPage {
 
     checkKeyPressResult() {
         cy.get(inputTarget).type('p')
-        cy.get(keyResult).should('contains', 'p')
+        cy.get(keyResult).should('have.text', 'You entered: P')
     }
 }
 
