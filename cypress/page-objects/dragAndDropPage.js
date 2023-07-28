@@ -1,4 +1,5 @@
 import "cypress-drag-drop";
+import "@4tw/cypress-drag-drop";
 
 const columnA = '#column-a'
 const columnB = '#column-b'
